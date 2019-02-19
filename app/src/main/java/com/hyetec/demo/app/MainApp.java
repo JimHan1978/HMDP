@@ -1,5 +1,6 @@
 package com.hyetec.demo.app;
 
+import com.hyetec.demo.di.component.DaggerAppComponent;
 import com.hyetec.hmdp.core.base.BaseApplication;
 import com.hyetec.demo.di.component.AppComponent;
 
@@ -17,11 +18,11 @@ public class MainApp extends BaseApplication {
     public void onCreate() {
         super.onCreate();
 
-//        mAppComponent = DaggerAppComponent
-//                .builder()
-//                .armsComponent(getArmsComponent())
-//                .build();
-//        mAppComponent.inject(this);
+        mAppComponent = DaggerAppComponent
+                .builder()
+                .archComponent(getArchComponent())
+                .build();
+        mAppComponent.inject(this);
     }
 
 

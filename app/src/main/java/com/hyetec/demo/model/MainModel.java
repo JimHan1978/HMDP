@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import io.reactivex.schedulers.Schedulers;
 import me.jessyan.rxerrorhandler.core.RxErrorHandler;
 import me.jessyan.rxerrorhandler.handler.ErrorHandleSubscriberOfFlowable;
@@ -25,7 +27,7 @@ public class MainModel extends BaseModel {
     private  RxErrorHandler mErrorHandler;
 
     private MutableLiveData<Resource<List<String>>> mMenus;
-
+    @Inject
     public MainModel(Application application) {
         super(application);
         mErrorHandler = RepositoryUtils.INSTANCE
