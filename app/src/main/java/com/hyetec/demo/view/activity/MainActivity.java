@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 
 import com.hyetec.demo.R;
 import com.hyetec.demo.app.EventBusTags;
+import com.hyetec.demo.view.adapter.MainPagerAdapter;
 import com.hyetec.demo.view.fragment.ApplicationFragment;
 import com.hyetec.demo.view.fragment.ContactsFragment;
 import com.hyetec.demo.view.fragment.MessageFragment;
@@ -88,6 +89,10 @@ public class MainActivity extends BaseActivity<MainViewModel> {
         mFragmentTitles.add("通讯录");
         mFragmentTitles.add("应用");
         mFragmentTitles.add("个人中心");
+
+        //Setup ViewPager
+        MainPagerAdapter adapter =
+                new MainPagerAdapter(getSupportFragmentManager(), mFragments, mFragmentTitles);
 
     }
 }
