@@ -6,8 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.hyetec.demo.R;
 import com.hyetec.demo.viewmodel.PersonalViewModel;
 import com.hyetec.hmdp.core.base.BaseFragment;
+
+import butterknife.ButterKnife;
 
 public class PersonalFragment extends BaseFragment<PersonalViewModel> {
     public static PersonalFragment newInstance() {
@@ -25,7 +28,9 @@ public class PersonalFragment extends BaseFragment<PersonalViewModel> {
      */
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return null;
+        View view = inflater.inflate(R.layout.fragment_personal, container, false);
+        ButterKnife.bind(this,view);
+        return view;
     }
 
     /**

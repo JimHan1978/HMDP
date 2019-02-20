@@ -16,6 +16,10 @@
 
 package com.hyetec.demo.di.module;
 
+import com.hyetec.demo.view.fragment.ApplicationFragment;
+import com.hyetec.demo.view.fragment.ContactsFragment;
+import com.hyetec.demo.view.fragment.MessageFragment;
+import com.hyetec.demo.view.fragment.PersonalFragment;
 import com.hyetec.hmdp.core.di.scope.FragmentScope;
 import com.hyetec.demo.view.fragment.MainFragment;
 
@@ -24,15 +28,23 @@ import dagger.android.ContributesAndroidInjector;
 
 @Module
 public abstract class FragmentBuildersModule {
-//    @ContributesAndroidInjector
-//    abstract RepoFragment contributeRepoFragment();
-//    @FragmentScope
-//    @ContributesAndroidInjector
-//    abstract UserFragment contributeUserFragment();
 
     @FragmentScope
-    @ContributesAndroidInjector
-    abstract MainFragment contributeMainFragment();
+    @ContributesAndroidInjector(modules = {MessageModule.class, MessageViewModelModule.class})
+    abstract MessageFragment contributeMessageFragment();
+
+    @FragmentScope
+    @ContributesAndroidInjector(modules = {ContactsModule.class, ContactsViewModelModule.class})
+    abstract ContactsFragment contributeContactsFragment();
+
+    @FragmentScope
+    @ContributesAndroidInjector(modules = {ApplicationModule.class, ApplicationViewModelModule.class})
+    abstract ApplicationFragment contributeApplicationFragment();
+
+    @FragmentScope
+    @ContributesAndroidInjector(modules = {PersonalModule.class, PersonalViewModelModule.class})
+    abstract PersonalFragment contributePersonalFragment();
+
 
 //    @ContributesAndroidInjector
 //    abstract SearchFragment contributeSearchFragment();

@@ -12,9 +12,8 @@ import dagger.Module;
  * Dagger AppModule
  */
 @Module(includes = {ViewModelFactoryModule.class,
-        BaseModelModule.class,
-        BaseViewModelModule.class
-//        WeatherDailyFragmentModule.class
+        BaseActivityModule.class,
+        FragmentBuildersModule.class
 })
 public class AppModule {
 

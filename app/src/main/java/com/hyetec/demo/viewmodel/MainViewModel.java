@@ -32,7 +32,7 @@ public class MainViewModel extends BaseViewModel<MainModel> {
     @Inject
     public MainViewModel(Application application, MainModel model) {
         super(application, model);
-        loadMenus();
+        //loadMenus();
     }
 
     public void loadMenus() {

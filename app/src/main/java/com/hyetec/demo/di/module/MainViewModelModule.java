@@ -10,19 +10,16 @@ import dagger.Module;
 import dagger.multibindings.IntoMap;
 
 /**
- * @author jimhan
- * @date 2017/7/31
- * Dagger MainViewModelModule
- * 包含ViewModelFactoryModule提供ViewModelProvider.Factory
- */
-@Module(includes = {BaseModelModule.class})
-public abstract class BaseViewModelModule {
+ * @author : created by jimhan
+ * 版本：1.0
+ * 创建日期：${DATE}
+ * 描述：
+ **/
 
+@Module(includes = {MainModule.class})
+public abstract class MainViewModelModule {
     @Binds
     @IntoMap
     @ViewModelScope(MainViewModel.class)
     abstract ViewModel bindMainViewModel(MainViewModel mainViewModel);
-
-    //    @Binds
-    //    abstract ViewModelProvider.Factory bindViewModelFactory(ViewModelFactory factory);
 }

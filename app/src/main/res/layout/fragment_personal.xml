@@ -12,6 +12,6 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textSize="@dimen/sp_16"
-        android:text="@string/contacts"/>
+        android:text="@string/personal"/>
 
 </LinearLayout>

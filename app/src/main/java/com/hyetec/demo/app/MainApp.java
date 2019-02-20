@@ -1,8 +1,9 @@
 package com.hyetec.demo.app;
 
+import com.didichuxing.doraemonkit.DoraemonKit;
+import com.hyetec.demo.di.component.AppComponent;
 import com.hyetec.demo.di.component.DaggerAppComponent;
 import com.hyetec.hmdp.core.base.BaseApplication;
-import com.hyetec.demo.di.component.AppComponent;
 
 /**
  * @author xiaobailong24
@@ -17,12 +18,13 @@ public class MainApp extends BaseApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-
+        DoraemonKit.install(this);
         mAppComponent = DaggerAppComponent
                 .builder()
                 .archComponent(getArchComponent())
                 .build();
         mAppComponent.inject(this);
+
     }
 
 

@@ -16,7 +16,7 @@ import dagger.Component;
  */
 @AppScope
 @Component(dependencies = ArchComponent.class,
-        modules = {AppModule.class,BaseActivityModule.class,FragmentBuildersModule.class})
+        modules = {AppModule.class})
 public interface AppComponent {
     /**
      * Dagger 注入

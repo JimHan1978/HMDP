@@ -12,6 +12,8 @@ import com.hyetec.demo.R;
 import com.hyetec.demo.viewmodel.MessageViewModel;
 import com.hyetec.hmdp.core.base.BaseFragment;
 
+import butterknife.ButterKnife;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -44,7 +46,10 @@ public class MessageFragment extends BaseFragment<MessageViewModel> {
      */
     @Override
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return null;
+        View view = inflater.inflate(R.layout.fragment_message, container, false);
+        ButterKnife.bind(this,view);
+
+        return view;
     }
 
     /**
