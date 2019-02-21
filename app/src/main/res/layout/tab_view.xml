@@ -10,6 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/message"
-        android:drawableTop="@mipmap/tab_message_normal"
+        android:drawableTop="@mipmap/tab_message_se"
         android:layout_gravity="center_horizontal"/>
 </LinearLayout>
