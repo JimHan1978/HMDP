@@ -5,11 +5,18 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/textView"
+    <ImageView
+        android:id="@+id/tab_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/message"
+        android:src="@drawable/tab_message_selector"/>
+    <TextView
+        android:id="@+id/tab_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@drawable/tab_textcolor_selector"
         android:text="@string/message"
-        android:drawableTop="@mipmap/tab_message_se"
+        android:textSize="@dimen/sp_12"
         android:layout_gravity="center_horizontal"/>
 </LinearLayout>

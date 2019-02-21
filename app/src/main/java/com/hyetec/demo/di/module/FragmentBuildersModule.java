@@ -21,7 +21,6 @@ import com.hyetec.demo.view.fragment.ContactsFragment;
 import com.hyetec.demo.view.fragment.MessageFragment;
 import com.hyetec.demo.view.fragment.PersonalFragment;
 import com.hyetec.hmdp.core.di.scope.FragmentScope;
-import com.hyetec.demo.view.fragment.MainFragment;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

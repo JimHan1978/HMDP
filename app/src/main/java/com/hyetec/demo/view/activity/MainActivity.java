@@ -5,7 +5,10 @@ import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.widget.EditText;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.hyetec.demo.R;
 import com.hyetec.demo.app.EventBusTags;
@@ -26,25 +29,14 @@ import timber.log.Timber;
 
 public class MainActivity extends BaseActivity<MainViewModel> {
 
-    /*@Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
-                    .commitNow();
-        }
-    }*/
-
     private int mReplace = 0;
     private List<Fragment> mFragments;
     private List<String> mFragmentTitles;
-    private int IconImg [] = {
-            R.mipmap.tab_message_normal,
-            R.mipmap.tab_address_book_normal,
-            R.mipmap.tab_app_normal,
-            R.mipmap.tab_setting_normal
+    private int iconImgs [] = {
+            R.drawable.tab_message_selector,
+            R.drawable.tab_contacts_selector,
+            R.drawable.tab_app_selector,
+            R.drawable.tab_setting_selector
     };
 
     @BindView(R.id.tab_layout)
@@ -117,6 +109,10 @@ public class MainActivity extends BaseActivity<MainViewModel> {
                 new MainPagerAdapter(getSupportFragmentManager(), mFragments, mFragmentTitles);
         contentViewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(contentViewPager);
+        //自定义tab样式
+        resetTabLayout();
+
+
         contentViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -133,4 +129,34 @@ public class MainActivity extends BaseActivity<MainViewModel> {
             }
         });
     }
+
+    /**
+     * 使用tablayout + viewpager时注意 如果设置了setupWithViewPager
+     * 则需要重新执行下方对每个条目赋值
+     * 否则会出现icon文字不显示的bug
+     */
+    private void resetTabLayout() {
+        for (int i=0;i<tabLayout.getTabCount();i++){
+            TabLayout.Tab tab = tabLayout.getTabAt(i);
+            if (tab!=null){
+                tab.setText(mFragmentTitles.get(i));
+                tab.setCustomView(getTabView(i));
+            }
+        }
+    }
+
+    /**
+     * 自定义tab样式
+     * @param position
+     * @return
+     */
+    public View getTabView(int position) {
+        View v = LayoutInflater.from(MainActivity.this).inflate(R.layout.tab_view, null);
+        TextView tv = v.findViewById(R.id.tab_text);
+        tv.setText(mFragmentTitles.get(position));
+        ImageView img = v.findViewById(R.id.tab_icon);
+        img.setImageResource(iconImgs[position]);
+        return v;
+    }
+
 }

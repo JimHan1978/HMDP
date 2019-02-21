@@ -88,6 +88,8 @@ dependencies {
         exclude module: 'jsr305'
     }
 
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     //test
     implementation rootProject.ext.dependencies["timber"]
     testImplementation rootProject.ext.dependencies["junit"]

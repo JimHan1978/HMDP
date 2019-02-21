@@ -7,4 +7,11 @@
     <string name="contacts">通讯录</string>
     <string name="application">应用</string>
     <string name="personal">个人中心</string>
+    <string name="userNameTest">张三丰</string>
+    <string name="employeeCode">员工号:</string>
+    <string name="employeeCodeDemo">H007</string>
+    <string name="employeeDeptDemo">创新孵化部</string>
+    <string name="employeePostDemo">Android工程师</string>
+    <string name="about">关于</string>
+    <string name="logout">退出登录</string>
 </resources>
