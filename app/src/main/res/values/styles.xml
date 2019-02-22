@@ -31,4 +31,31 @@
         <item name="android:paddingTop">@dimen/dp_10</item>
     </style>
 
+    <style name="menuItemIconStyle">
+        <item name="android:layout_width">@dimen/dp_24</item>
+        <item name="android:layout_height">@dimen/dp_36</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="menuItemTitleStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/dp_10</item>
+    </style>
+
+    <style name="contentsArrowStyle">
+        <item name="android:layout_width">@dimen/dp_24</item>
+        <item name="android:layout_height">@dimen/dp_36</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:src">@mipmap/contents_arrow</item>
+    </style>
+
+    <style name="menuItemStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/dp_1</item>
+        <item name="android:background">@drawable/background_item_selector</item>
+        <item name="android:padding">@dimen/dp_10</item>
+    </style>
+
 </resources>

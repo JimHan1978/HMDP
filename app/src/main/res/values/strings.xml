@@ -14,4 +14,8 @@
     <string name="employeePostDemo">Android工程师</string>
     <string name="about">关于</string>
     <string name="logout">退出登录</string>
+    <string name="company">公司信息</string>
+    <string name="services">订阅服务</string>
+    <string name="setting">设置</string>
+    <string name="feedback">帮助与反馈</string>
 </resources>

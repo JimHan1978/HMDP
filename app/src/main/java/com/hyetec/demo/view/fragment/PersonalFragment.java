@@ -2,9 +2,11 @@ package com.hyetec.demo.view.fragment;
 
 import android.os.Bundle;
 import android.os.Message;
+import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.hyetec.demo.R;
 import com.hyetec.demo.viewmodel.PersonalViewModel;
@@ -30,6 +32,13 @@ public class PersonalFragment extends BaseFragment<PersonalViewModel> {
     public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_personal, container, false);
         ButterKnife.bind(this,view);
+        ConstraintLayout setting = view.findViewById(R.id.setting);
+        setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(PersonalFragment.this.getContext(),"xxxx",Toast.LENGTH_LONG).show();
+            }
+        });
         return view;
     }
 
